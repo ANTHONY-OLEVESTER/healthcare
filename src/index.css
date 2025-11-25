@@ -450,7 +450,7 @@ img {
   text-align: center;
   cursor: pointer;
   transition: all 0.2s;
-  border: 2px solid transparent;
+  border: 2px solid black;
   text-decoration: none;
   font-size: 1rem;
 }
@@ -1242,3 +1242,14 @@ button.btn-secondary:disabled:hover {
 .mb-sm { margin-bottom: var(--spacing-sm); }
 .mb-md { margin-bottom: var(--spacing-md); }
 .mb-lg { margin-bottom: var(--spacing-lg); }
+
+
+.email-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.email-link:hover {
+    color: black;
+}
