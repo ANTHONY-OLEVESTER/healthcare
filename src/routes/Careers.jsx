@@ -142,14 +142,14 @@ function Careers() {
         <h2>Ready to join our team?</h2>
         <p>
           We'd love to hear from you. Send your resume and a brief introduction to{" "}
-          <a href="mailto:careers@roadrunnerhealthcare.com">careers@roadrunnerhealthcare.com</a>,
+          <a href="mailto:careers@roadrunnerhealthcare.com" className="email-link">careers@roadrunnerhealthcare.com</a>,
           or call us at <a href="tel:15053214819">505-321-4819</a>.
         </p>
         <div className="cta-actions">
           <a href="mailto:careers@roadrunnerhealthcare.com" className="btn-primary">
             Email Your Resume
           </a>
-          <a href="tel:15053214819" className="btn-secondary">
+          <a href="tel:15053214819" className="btn-secondary email-link">
             Call 505-321-4819
           </a>
         </div>
