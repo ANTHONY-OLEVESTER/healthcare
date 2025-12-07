@@ -1,0 +1,125 @@
+Below is a list of 39 healthcare-related images (one of the 40 searched URLs returned an error, so it's unavailable). These are all from free stock photo sources and appear to be openly available without embedded watermarks in their original forms (though some preview versions in search results may show site branding). For each, I've included:
+
+- **Description**: A brief summary of what the image depicts.
+- **Metadata**: Dimensions (width x height in pixels), image URL, and source webpage.
+- A rendered view of the image for visual reference.
+
+1. **Description**: A close-up of a stethoscope with a blue tube and metallic head, set against an abstract blue wavy background.
+   **Metadata**: 544 x 340 pixels | Image URL: https://www.stockvault.net/data/2011/10/11/127462/thumb16.jpg | Webpage: https://www.stockvault.net/c/objects/medical
+
+2. **Description**: A teal stethoscope and blue pen lying on a medical chart or form with handwritten notes.
+   **Metadata**: 3000 x 2000 pixels | Image URL: https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg?cs=srgb&dl=pexels-pixabay-40568.jpg&fm=jpg | Webpage: https://www.pexels.com/search/health/
+
+3. **Description**: A smiling nurse in blue scrubs comforting an elderly patient by placing a hand on their shoulder.
+   **Metadata**: 600 x 400 pixels | Image URL: https://cdn.create.vista.com/api/media/small/30767179/stock-photo-african-medical-nurse-comforting-senior-patient | Webpage: https://create.vista.com/photos/healthcare/
+
+4. **Description**: A doctor in blue scrubs holding a pink piggy bank with a bandage, inserting a coin.
+   **Metadata**: 510 x 340 pixels | Image URL: https://www.stockvault.net/data/2011/10/30/127721/thumb16.jpg | Webpage: https://www.stockvault.net/c/objects/medical
+
+5. **Description**: A blue stethoscope lying flat on a white background.
+   **Metadata**: 466 x 340 pixels | Image URL: https://www.stockvault.net/data/2012/02/07/129087/thumb16.jpg | Webpage: https://www.stockvault.net/c/objects/medical
+
+6. **Description**: A blurred interior of a hospital waiting area with chairs and a reception desk.
+   **Metadata**: 740 x 493 pixels | Image URL: https://img.freepik.com/free-photo/blur-hospital_1203-7972.jpg?semt=ais_hybrid&w=740&q=80 | Webpage: https://www.freepik.com/free-photos-vectors/hospital-background
+
+7. **Description**: A team of surgeons in green scrubs performing an operation under bright lights.
+   **Metadata**: 1280 x 845 pixels | Image URL: https://cdn.pixabay.com/photo/2016/11/08/05/29/surgery-1807541_1280.jpg | Webpage: https://pixabay.com/images/search/medical/
+
+8. **Description**: A black stethoscope, blue pen, and open notebook on a white surface.
+   **Metadata**: 3000 x 2000 pixels | Image URL: https://plus.unsplash.com/premium_photo-1673953509975-576678fa6710?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aGVhbHRoY2FyZXxlbnwwfHwwfHx8MA%3D%3D | Webpage: https://unsplash.com/s/photos/healthcare
+
+9. **Description**: A close-up of a silver stethoscope on a blue surface.
+   **Metadata**: 800 x 533 pixels | Image URL: https://thumbs.dreamstime.com/b/close-up-stethoscope-blue-surface-symbolizing-healthcare-medical-examination-closeup-stethoscope-symbolizing-328730018.jpg | Webpage: https://www.dreamstime.com/photos-images/medical-clearance.html
+
+10. **Description**: An illustrated hospital building with people outside and a red "HOSPITAL" sign.
+    **Metadata**: 360 x 225 pixels | Image URL: https://img.freepik.com/free-vector/people-walking-sitting-hospital-building-city-clinic-glass-exterior-flat-vector-illustration-medical-help-emergency-architecture-healthcare-concept_74855-10130.jpg?w=360 | Webpage: https://www.freepik.com/free-photos-vectors/hospital
+
+11. **Description**: A doctor's hands checking a patient's pulse with a blood pressure cuff nearby.
+    **Metadata**: 740 x 494 pixels | Image URL: https://img.freepik.com/free-photo/doctor-s-hand-tending-patient_23-2148168440.jpg?semt=ais_hybrid&w=740&q=80 | Webpage: https://www.freepik.com/free-photos-vectors/medical
+
+12. **Description**: A male doctor in a white coat with arms crossed, holding a red stethoscope.
+    **Metadata**: 3000 x 1688 pixels | Image URL: https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aGVhbHRoY2FyZXxlbnwwfHwwfHx8MA%3D%3D | Webpage: https://unsplash.com/s/photos/healthcare
+
+13. **Description**: Black and white photo of a stethoscope lying on a surface.
+    **Metadata**: 3000 x 2000 pixels | Image URL: https://images.unsplash.com/photo-1505751172876-fa1923c5c528?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8aGVhbHRoY2FyZXxlbnwwfHwwfHx8MA%3D%3D | Webpage: https://unsplash.com/s/photos/healthcare
+
+14. **Description**: 3D rendering of green virus particles floating on a blue background.
+    **Metadata**: 544 x 340 pixels | Image URL: https://www.stockvault.net/data/2011/10/11/127466/thumb16.jpg | Webpage: https://www.stockvault.net/c/objects/medical
+
+15. **Description**: Close-up of a stethoscope with blue tube on a reflective blue surface.
+    **Metadata**: 600 x 336 pixels | Image URL: https://cdn.create.vista.com/api/media/small/770432384/stock-photo-close-image-medical-stethoscope-resting-reflective-surface-highlighting-its-design | Webpage: https://create.vista.com/photos/healthcare/
+
+16. **Description**: Group of medical professionals with gloved hands stacked in a huddle.
+    **Metadata**: 740 x 493 pixels | Image URL: https://img.freepik.com/free-photo/close-up-team-health-workers_23-2149112527.jpg?semt=ais_hybrid&w=740&q=80 | Webpage: https://www.freepik.com/free-photos-vectors/medical-teamwork
+
+17. **Description**: A doctor showing a digital tablet to a smiling patient in a clinic.
+    **Metadata**: 600 x 400 pixels | Image URL: https://cdn.create.vista.com/api/media/small/268358850/stock-photo-smiling-doctor-showing-digital-tablet-diagnosis-happy-woman | Webpage: https://create.vista.com/photos/healthcare/
+
+18. **Description**: A doctor filling out a medical survey form with checkboxes.
+    **Metadata**: 612 x 408 pixels | Image URL: https://media.istockphoto.com/id/1548203309/photo/doctor-fills-out-the-medical-survey-paperwork-and-checking-mark-on-checkboxes.jpg?s=612x612&w=0&k=20&c=yZsC3hd8XT22IHYFxXXlng7iWol5dHElue9SUimkup4= | Webpage: https://www.istockphoto.com/photos/medical-certificate
+
+19. **Description**: (Unavailable - No image found at URL)
+    **Metadata**: N/A
+
+20. **Description**: A blue caduceus medical symbol on an abstract wavy blue background.
+    **Metadata**: 544 x 340 pixels | Image URL: https://www.stockvault.net/data/2009/12/22/112490/thumb16.jpg | Webpage: https://www.stockvault.net/c/objects/medical
+
+21. **Description**: A doctor using a laptop with holographic medical icons floating above.
+    **Metadata**: 740 x 493 pixels | Image URL: https://img.freepik.com/free-photo/medical-banner-with-doctor-working-laptop_23-2149611211.jpg?semt=ais_hybrid&w=740&q=80 | Webpage: https://www.freepik.com/free-photos-vectors/ai-healthcare
+
+22. **Description**: A female doctor in a white coat using a digital tablet in a medical office.
+    **Metadata**: 608 x 405 pixels | Image URL: https://cdn.create.vista.com/api/media/small/743798844/stock-photo-female-doctor-white-coat-using-digital-tablet-modern-medical-office | Webpage: https://create.vista.com/photos/healthcare/
+
+23. **Description**: Close-up of a stethoscope head on a blue surface.
+    **Metadata**: 612 x 344 pixels | Image URL: https://media.istockphoto.com/id/1428634687/photo/stethoscope.jpg?s=612x612&w=0&k=20&c=LxwhYy5Lgf1p81rCm3jd0X4U-h1F3rev04DSczmZIMA= | Webpage: https://www.istockphoto.com/photos/doctors-material
+
+24. **Description**: A diverse group of smiling doctors and nurses posing together in a hospital.
+    **Metadata**: 612 x 408 pixels | Image URL: https://media.istockphoto.com/id/1555515663/photo/happy-portrait-group-and-doctors-for-healthcare-service-leadership-and-teamwork-in-hospital.jpg?s=612x612&w=0&k=20&c=TLjQ_2QSgCkG2GdfggIe9mMHuz28eD_zgjuwI9gw5KM= | Webpage: https://www.istockphoto.com/photos/group-of-doctors
+
+25. **Description**: Close-up of a doctor's hands writing on a medical clipboard.
+    **Metadata**: 640 x 360 pixels | Image URL: https://assets.mixkit.co/videos/17469/17469-thumb-360-0.jpg | Webpage: https://mixkit.co/free-stock-video/medical/
+
+26. **Description**: A doctor interacting with holographic medical icons like DNA, heart, and lab equipment.
+    **Metadata**: 1200 x 720 pixels | Image URL: https://watermark.lovepik.com/photo/40007/3397.jpg_wh1200.jpg | Webpage: https://lovepik.com/images/backgrounds-equipment-medical.html
+
+27. **Description**: A doctor in a white coat examining a patient on an exam table.
+    **Metadata**: 640 x 427 pixels | Image URL: https://cdn.pixabay.com/photo/2015/02/26/15/40/doctor-650534_640.jpg | Webpage: https://pixabay.com/images/search/medical/
+
+28. **Description**: A doctor using a smartphone, with a stethoscope around their neck.
+    **Metadata**: 3000 x 2000 pixels | Image URL: https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aGVhbHRoY2FyZXxlbnwwfHwwfHx8MA%3D%3D | Webpage: https://unsplash.com/s/photos/healthcare
+
+29. **Description**: A doctor holding a medical element or tool in front of them.
+    **Metadata**: 740 x 493 pixels | Image URL: https://img.freepik.com/free-photo/front-view-doctor-holding-medical-element_23-2148854104.jpg?semt=ais_hybrid&w=740&q=80 | Webpage: https://www.freepik.com/free-photos-vectors/health-insurance
+
+30. **Description**: A syringe and various pills scattered on a white surface.
+    **Metadata**: 640 x 384 pixels | Image URL: https://cdn.pixabay.com/photo/2016/12/05/19/49/syringe-1884784_640.jpg | Webpage: https://pixabay.com/images/search/medical/
+
+31. **Description**: A healthcare worker hugging an elderly patient at home.
+    **Metadata**: 612 x 408 pixels | Image URL: https://media.istockphoto.com/id/1719538017/photo/home-care-healthcare-professional-hugging-senior-patient.jpg?s=612x612&w=0&k=20&c=DTQwVD1DTH0CMQ78aox8-cVKg8Nl-wCkSwY-S072M4E= | Webpage: https://www.istockphoto.com/photos/home-care
+
+32. **Description**: A confident female doctor standing with arms crossed in a clinic office.
+    **Metadata**: 740 x 518 pixels | Image URL: https://img.freepik.com/free-photo/confident-doctor-clinic_23-2151983463.jpg?semt=ais_hybrid&w=740&q=80 | Webpage: https://www.freepik.com/free-photos-vectors/doctor
+
+33. **Description**: Close-up of a doctor's hands writing a prescription on a clipboard.
+    **Metadata**: 640 x 360 pixels | Image URL: https://assets.mixkit.co/videos/17475/17475-thumb-360-0.jpg | Webpage: https://mixkit.co/free-stock-video/health/
+
+34. **Description**: A doctor holding a patient's hand in a hospital bed for support.
+    **Metadata**: 612 x 408 pixels | Image URL: https://media.istockphoto.com/id/1560100163/photo/holding-hands-healthcare-and-a-doctor-with-a-patient-in-surgery-for-pulse-help-or-support.jpg?s=612x612&w=0&k=20&c=jFWXLZKDjlS_iQiJZCU-0SWyNRw2bmHxPjRFKsihE3c= | Webpage: https://www.istockphoto.com/photos/hospital-life-support
+
+35. **Description**: A nurse and patient together pointing at a tablet screen.
+    **Metadata**: 3000 x 2000 pixels | Image URL: https://plus.unsplash.com/premium_photo-1675808575920-8010494407e6?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aGVhbHRoY2FyZXxlbnwwfHwwfHx8MA%3D%3D | Webpage: https://unsplash.com/s/photos/healthcare
+
+36. **Description**: Abstract digital representation of human organs and data on a tablet.
+    **Metadata**: 3000 x 1615 pixels | Image URL: https://plus.unsplash.com/premium_photo-1699387204388-120141c76d51?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aGVhbHRoY2FyZXxlbnwwfHwwfHx8MA%3D%3D | Webpage: https://unsplash.com/s/photos/healthcare
+
+37. **Description**: A female doctor in a white coat consulting with a patient across a desk.
+    **Metadata**: 450 x 274 pixels | Image URL: https://image.shutterstock.com/image-photo/doctor-woman-wearing-white-medical-450w-2528884933.jpg | Webpage: https://www.stockvault.net/c/objects/medical
+
+38. **Description**: A group of doctors and nurses standing confidently in a hospital corridor.
+    **Metadata**: 612 x 388 pixels | Image URL: https://media.istockphoto.com/id/1530248132/photo/portrait-of-senior-doctor-and-medical-team-looking-at-camera-in-corridor.jpg?s=612x612&w=0&k=20&c=MWMLLMUYAAmSS7TIko-X-t3zn93KFH45iFMZl8KQW2o= | Webpage: https://www.istockphoto.com/photos/group-of-doctors
+
+39. **Description**: Blurred view of a hospital interior with medical staff walking.
+    **Metadata**: 450 x 272 pixels | Image URL: https://image.shutterstock.com/image-photo/blurred-background-hospital-interior-medical-450w-2600957691.jpg | Webpage: https://www.stockvault.net/c/objects/medical
+
+40. **Description**: Abstract blue background with digital circuits, heartbeat line, and healthcare icons.
+    **Metadata**: 1000 x 750 pixels | Image URL: https://dm0qx8t0i9gc9.cloudfront.net/watermarks/image/rDtN98Qoishumwih/medical-healthcare-background_GJumGl9O_SB_PM.jpg | Webpage: https://www.storyblocks.com/images/stock/medical-healthcare-background-bq9lyjasq_zj6gpfizd

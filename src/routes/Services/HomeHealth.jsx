@@ -1,8 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { galleryImages } from "../../content/galleryImages";
 
 function HomeHealth() {
+  const heroImage = galleryImages[3];
+  const featureImages = [galleryImages[1], galleryImages[4]].filter(Boolean);
+
   return (
     <div className="page service-page">
       <Helmet>
@@ -12,23 +16,40 @@ function HomeHealth() {
           content="Skilled nursing, physical therapy, and in-home caregiving services in New Mexico. Medicare-certified home health care for recovery and chronic disease management."
         />
       </Helmet>
-      <section className="page-header service-header">
+
+      <section
+        className="page-header service-header service-hero"
+        style={heroImage ? { backgroundImage: `url(${heroImage.src})` } : undefined}
+      >
         <h1>Home Health & In-Home Care</h1>
         <p className="lead">
-          Skilled nursing, therapy, and personal caregiving services to help you
-          recover, manage chronic conditions, and live safely at home.
+          Skilled nursing, therapy, and personal caregiving services to help you recover, manage chronic conditions, and
+          live safely at home.
         </p>
       </section>
 
       <section className="section">
         <h2>What is home health?</h2>
         <p>
-          Home health brings medical care and personal support into your home. Whether
-          you're recovering from surgery or hospitalization, managing a chronic illness,
-          or need help with daily activities, Roadrunner Home Health provides skilled
-          professionals who work with your physician to keep you safe, comfortable, and
-          independent at home.
+          Home health brings medical care and personal support into your home. Whether you're recovering from surgery or
+          hospitalization, managing a chronic illness, or need help with daily activities, Roadrunner Home Health
+          provides skilled professionals who work with your physician to keep you safe, comfortable, and independent at
+          home.
         </p>
+
+        {featureImages.length > 0 && (
+          <div className="service-photo-grid">
+            {featureImages.map((img) => (
+              <figure key={img.src} className="service-photo">
+                <img src={img.src} alt={img.title} loading="lazy" />
+                <figcaption>
+                  <strong>{img.title}</strong>
+                  <span>{img.description}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        )}
       </section>
 
       <section className="section">
@@ -36,10 +57,7 @@ function HomeHealth() {
 
         <div className="service-category">
           <h3>Skilled Nursing</h3>
-          <p>
-            Registered nurses and licensed practical nurses provide medical care at home,
-            including:
-          </p>
+          <p>Registered nurses and licensed practical nurses provide medical care at home, including:</p>
           <ul>
             <li>Wound care and dressing changes</li>
             <li>Medication management and education</li>
@@ -54,22 +72,17 @@ function HomeHealth() {
 
         <div className="service-category">
           <h3>Therapy Services</h3>
-          <p>
-            Licensed therapists help you regain strength, mobility, and independence:
-          </p>
+          <p>Licensed therapists help you regain strength, mobility, and independence:</p>
           <ul>
-            <li><strong>Physical Therapy (PT)</strong> – Improve mobility, strength, balance, and reduce fall risk</li>
-            <li><strong>Occupational Therapy (OT)</strong> – Regain ability to perform daily activities like bathing, dressing, cooking</li>
-            <li><strong>Speech Therapy (ST)</strong> – Address swallowing difficulties, speech, and cognitive function</li>
+            <li><strong>Physical Therapy (PT)</strong> - Improve mobility, strength, balance, and reduce fall risk</li>
+            <li><strong>Occupational Therapy (OT)</strong> - Regain ability to perform daily activities like bathing, dressing, cooking</li>
+            <li><strong>Speech Therapy (ST)</strong> - Address swallowing difficulties, speech, and cognitive function</li>
           </ul>
         </div>
 
         <div className="service-category">
           <h3>In-Home Caregiving</h3>
-          <p>
-            Personal care aides and caregivers provide non-medical support to help with
-            daily living:
-          </p>
+          <p>Personal care aides and caregivers provide non-medical support to help with daily living:</p>
           <ul>
             <li>Bathing, dressing, grooming</li>
             <li>Meal preparation and feeding assistance</li>
@@ -84,9 +97,7 @@ function HomeHealth() {
 
       <section className="section highlight">
         <h2>Who qualifies for home health?</h2>
-        <p>
-          Medicare-covered home health services are available when:
-        </p>
+        <p>Medicare-covered home health services are available when:</p>
         <ul className="criteria-list">
           <li>You are homebound (difficult or unsafe to leave home without assistance)</li>
           <li>Your physician orders home health services</li>
@@ -94,8 +105,8 @@ function HomeHealth() {
           <li>Services are provided by a Medicare-certified agency (we are certified)</li>
         </ul>
         <p>
-          Private-pay and insurance-based caregiving services are available for patients
-          who do not meet Medicare homebound criteria but still need assistance at home.
+          Private-pay and insurance-based caregiving services are available for patients who do not meet Medicare
+          homebound criteria but still need assistance at home.
         </p>
       </section>
 
@@ -124,10 +135,10 @@ function HomeHealth() {
       <section className="section">
         <h2>Insurance & payment</h2>
         <ul>
-          <li><strong>Medicare</strong> – Covers skilled nursing and therapy services when medically necessary</li>
-          <li><strong>Medicaid</strong> – Covers home health and personal care services</li>
-          <li><strong>Private Insurance</strong> – Most plans cover home health; we'll verify your benefits</li>
-          <li><strong>Private Pay</strong> – Caregiving and companion services available on an hourly or live-in basis</li>
+          <li><strong>Medicare</strong> - Covers skilled nursing and therapy services when medically necessary</li>
+          <li><strong>Medicaid</strong> - Covers home health and personal care services</li>
+          <li><strong>Private Insurance</strong> - Most plans cover home health; we'll verify your benefits</li>
+          <li><strong>Private Pay</strong> - Caregiving and companion services available on an hourly or live-in basis</li>
         </ul>
       </section>
 
@@ -135,16 +146,16 @@ function HomeHealth() {
         <h2>How to get started</h2>
         <ol className="process-list">
           <li>
-            <strong>Referral</strong> – Your physician, hospital, or family can refer you to home health.
+            <strong>Referral</strong> - Your physician, hospital, or family can refer you to home health.
           </li>
           <li>
-            <strong>Assessment</strong> – A nurse visits your home to assess your needs and create a care plan.
+            <strong>Assessment</strong> - A nurse visits your home to assess your needs and create a care plan.
           </li>
           <li>
-            <strong>Authorization</strong> – We coordinate with your physician and verify insurance coverage.
+            <strong>Authorization</strong> - We coordinate with your physician and verify insurance coverage.
           </li>
           <li>
-            <strong>Care begins</strong> – Your care team starts visits based on your personalized plan.
+            <strong>Care begins</strong> - Your care team starts visits based on your personalized plan.
           </li>
         </ol>
       </section>

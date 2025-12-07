@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { galleryImages } from "../content/galleryImages";
 
 function About() {
+  const aboutImages = galleryImages.slice(1, 4);
+
   return (
     <div className="page">
       <Helmet>
@@ -32,12 +35,24 @@ function About() {
           organization offering hospice, home health, skilled nursing, in-home caregiving, and
           primary care services for homebound patients.
         </p>
+
+        <div className="image-grid">
+          {aboutImages.map((img) => (
+            <figure key={img.src} className="image-card">
+              <img src={img.src} alt={img.title} loading="lazy" />
+              <figcaption>
+                <strong>{img.title}</strong>
+                <span>{img.description}</span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
       </section>
 
       <section className="section highlight">
         <h2>Our Mission</h2>
         <p>
-          To deliver compassionate, patient-centered care in the home – meeting patients and
+          To deliver compassionate, patient-centered care in the home - meeting patients and
           families where they are, supporting independence, comfort, and quality of life through
           every stage of health.
         </p>
@@ -84,7 +99,7 @@ function About() {
         </p>
         <p>
           If you're unsure whether we serve your area, please{" "}
-          <Link to="/contact">contact us</Link> – we'll do our best to help.
+          <Link to="/contact">contact us</Link> - we'll do our best to help.
         </p>
       </section>
 
@@ -95,15 +110,15 @@ function About() {
         </p>
         <ul className="services-list">
           <li>
-            <strong>Hospice Care</strong> – End-of-life comfort, symptom management,
+            <strong>Hospice Care</strong> - End-of-life comfort, symptom management,
             and family support through Roadrunner Hospice.
           </li>
           <li>
-            <strong>Home Health & In-Home Care</strong> – Skilled nursing, therapy,
+            <strong>Home Health & In-Home Care</strong> - Skilled nursing, therapy,
             and personal caregiving through Roadrunner Home Health.
           </li>
           <li>
-            <strong>Homebound Primary Care</strong> – Geriatric primary care visits
+            <strong>Homebound Primary Care</strong> - Geriatric primary care visits
             for homebound and assisted living patients through Access Medical.
           </li>
         </ul>
