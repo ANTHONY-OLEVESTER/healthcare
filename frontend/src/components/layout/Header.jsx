@@ -59,6 +59,36 @@ function Header() {
     return match?.hero_image_url || match?.gallery_image_urls?.[0] || galleryImages.find((img) => img.title?.toLowerCase().includes(slug || ""))?.src || galleryImages[0]?.src;
   };
 
+  const normalizeNav = (items) => {
+    const servicesParent = items.find((i) => i.path === "/services" || i.label.toLowerCase() === "services");
+    const serviceChildren = items.filter((i) => i.path.startsWith("/services/") && i.path !== "/services");
+    const nonServiceItems = items.filter((i) => !i.path.startsWith("/services/") || i.path === "/services");
+
+    if (servicesParent) {
+      const mergedChildren = [...(servicesParent.children || []), ...serviceChildren.filter((c) => !(servicesParent.children || []).some((child) => child.id === c.id))];
+      return [
+        ...nonServiceItems
+          .filter((i) => i !== servicesParent && !serviceChildren.includes(i)),
+        { ...servicesParent, children: mergedChildren },
+      ].sort((a, b) => (a.order || 0) - (b.order || 0));
+    }
+
+    if (serviceChildren.length) {
+      return [
+        ...nonServiceItems,
+        {
+          id: "services-auto",
+          label: "Services",
+          path: "/services",
+          order: 3,
+          children: serviceChildren.sort((a, b) => (a.order || 0) - (b.order || 0)),
+        },
+      ].sort((a, b) => (a.order || 0) - (b.order || 0));
+    }
+
+    return items;
+  };
+
   return (
     <header className="header">
       <div className="header-inner">
@@ -86,7 +116,7 @@ function Header() {
         </button>
 
         <nav className={`nav ${mobileMenuOpen ? 'nav-open' : ''}`}>
-          {navItems.map((item) => {
+          {normalizeNav(navItems).map((item) => {
             const hasChildren = item.children && item.children.length > 0;
             if (!hasChildren) {
               return (

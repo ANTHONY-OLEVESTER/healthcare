@@ -14,4 +14,10 @@ class NavItem(Base):
   parent_id = Column(Integer, ForeignKey("nav_items.id"), nullable=True)
   is_visible = Column(Boolean, default=True)
 
-  children = relationship("NavItem", cascade="all, delete-orphan", backref="parent", remote_side=[id])
+  children = relationship(
+    "NavItem",
+    cascade="all, delete-orphan",
+    backref="parent",
+    remote_side=[id],
+    single_parent=True,
+  )

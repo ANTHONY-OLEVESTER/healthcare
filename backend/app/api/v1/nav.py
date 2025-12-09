@@ -9,8 +9,20 @@ from app.schemas.nav import NavItemCreate, NavItemUpdate, NavItemRead
 router = APIRouter()
 
 
+def serialize_nav(item: NavItem) -> dict:
+  return {
+    "id": item.id,
+    "label": item.label,
+    "path": item.path,
+    "order": item.order,
+    "parent_id": item.parent_id,
+    "is_visible": item.is_visible,
+    "children": [],
+  }
+
+
 def build_tree(items: list[NavItem]) -> list[dict]:
-  lookup = {item.id: {"id": item.id, "label": item.label, "path": item.path, "order": item.order, "parent_id": item.parent_id, "is_visible": item.is_visible, "children": []} for item in items}
+  lookup = {item.id: serialize_nav(item) for item in items}
   roots: list[dict] = []
   for item in items:
     node = lookup[item.id]
@@ -36,7 +48,7 @@ def create_nav_item(nav_in: NavItemCreate, db: Session = Depends(deps.get_db), c
   db.add(nav)
   db.commit()
   db.refresh(nav)
-  return nav
+  return serialize_nav(nav)
 
 
 @router.put("/{item_id}", response_model=NavItemRead)
@@ -48,7 +60,7 @@ def update_nav_item(item_id: int, nav_in: NavItemUpdate, db: Session = Depends(d
     setattr(nav, field, value)
   db.commit()
   db.refresh(nav)
-  return nav
+  return serialize_nav(nav)
 
 
 @router.delete("/{item_id}")

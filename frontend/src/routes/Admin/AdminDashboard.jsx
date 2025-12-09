@@ -1,23 +1,40 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
+import { Link } from "react-router-dom";
 
 function AdminDashboard() {
-  const { user, logout, loading } = useAuth();
-
-  if (loading) return <div className="page"><p>Loading...</p></div>;
-  if (!user) return <Navigate to="/admin/login" replace />;
+  const { user } = useAuth();
 
   return (
-    <div className="page">
-      <section className="page-header">
-        <h1>Admin Dashboard</h1>
-        <p className="lead">Manage navigation, services, FAQ, and careers.</p>
-      </section>
-      <section className="section">
-        <p>Welcome, {user.full_name || user.email}.</p>
-        <button className="btn-secondary" onClick={logout}>Logout</button>
-      </section>
+    <div className="admin-section">
+      <div className="admin-section-header">
+        <div>
+          <h1>Dashboard</h1>
+          <p className="text-muted">Welcome, {user?.full_name || user?.email}.</p>
+        </div>
+      </div>
+      <div className="admin-grid">
+        <div className="admin-card">
+          <h3>Navigation</h3>
+          <p>Manage header links and service dropdown items.</p>
+          <Link className="btn-primary" to="/admin/nav">Go to Navigation</Link>
+        </div>
+        <div className="admin-card">
+          <h3>Services</h3>
+          <p>Update service copy, imagery, and highlights.</p>
+          <Link className="btn-primary" to="/admin/services">Go to Services</Link>
+        </div>
+        <div className="admin-card">
+          <h3>FAQ</h3>
+          <p>Control FAQ questions, answers, and categories.</p>
+          <Link className="btn-primary" to="/admin/faq">Go to FAQ</Link>
+        </div>
+        <div className="admin-card">
+          <h3>Careers</h3>
+          <p>Manage job postings shown on the careers page.</p>
+          <Link className="btn-primary" to="/admin/careers">Go to Careers</Link>
+        </div>
+      </div>
     </div>
   );
 }

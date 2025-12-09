@@ -61,7 +61,10 @@ Key endpoints:
 - `GET /services` / `GET /services/{slug}` — service catalog
 - `GET /faq` — FAQs (optional `?category=`)
 - `GET /careers` / `GET /careers/{id}` — careers
+- `GET /slides` — homepage slides
+- `GET /news` — homepage “what’s new” items
 - Admin CRUD for nav/services/faq/careers via POST/PUT/DELETE (JWT, superuser required)
+- File uploads: `POST /uploads` (admin-only) saves to `/uploads` and returns a URL
 
 ## Page-by-page summary (frontend)
 

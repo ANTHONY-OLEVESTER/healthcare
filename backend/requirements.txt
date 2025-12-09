@@ -2,6 +2,9 @@ fastapi
 uvicorn[standard]
 SQLAlchemy
 pydantic
+pydantic-settings
+email-validator
 python-jose[cryptography]
 passlib[bcrypt]
 python-dotenv
+groq

@@ -2,28 +2,50 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { galleryImages } from "../content/galleryImages";
+import { getSlides } from "../api/slides";
+import { getNews } from "../api/news";
 
 function Home() {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [slides, setSlides] = useState(galleryImages);
+  const [news, setNews] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    if (!galleryImages.length) return undefined;
+    let cancelled = false;
+
+    async function loadData() {
+      try {
+        const [slideData, newsData] = await Promise.all([getSlides().catch(() => []), getNews().catch(() => [])]);
+        if (!cancelled) {
+          setSlides(slideData.length ? slideData : galleryImages);
+          setNews(newsData || []);
+        }
+      } catch (err) {
+        if (!cancelled) setError(err.message);
+      }
+    }
+
+    loadData();
 
     const timer = setInterval(() => {
-      setActiveSlide((prev) => (prev + 1) % galleryImages.length);
+      setActiveSlide((prev) => (prev + 1) % slides.length);
     }, 6000);
 
-    return () => clearInterval(timer);
-  }, []);
+    return () => {
+      cancelled = true;
+      clearInterval(timer);
+    };
+  }, [slides.length]);
 
   const goToSlide = (index) => {
-    if (!galleryImages.length) return;
-    const total = galleryImages.length;
+    if (!slides.length) return;
+    const total = slides.length;
     const nextIndex = (index + total) % total;
     setActiveSlide(nextIndex);
   };
 
-  const heroBackground = galleryImages[0]?.src;
+  const heroBackground = slides[0]?.image_url || slides[0]?.src;
 
   return (
     <div className="page home">
@@ -135,17 +157,22 @@ function Home() {
 
           <div className="highlight-slider" aria-label="Care moments from the Roadrunner team">
             <div className="slider-window">
-              {galleryImages.map((slide, index) => (
+              {slides.map((slide, index) => (
                 <article
-                  key={slide.src}
+                  key={slide.id || slide.src}
                   className={`slide ${index === activeSlide ? "active" : ""}`}
-                  style={{ backgroundImage: `url(${slide.src})` }}
+                  style={{ backgroundImage: `url(${slide.image_url || slide.src})` }}
                 >
                   <div className="slide-content">
-                    <p className="slide-tag">{slide.location}</p>
+                    <p className="slide-tag">{slide.location || slide.cta_label || "Care at home"}</p>
                     <h3>{slide.title}</h3>
-                    <p>{slide.description}</p>
-                    <p className="slide-credit">{slide.credit}</p>
+                    <p>{slide.subtitle || slide.description}</p>
+                    {slide.cta_label && slide.cta_url && (
+                      <Link to={slide.cta_url} className="btn-secondary">
+                        {slide.cta_label}
+                      </Link>
+                    )}
+                    {slide.credit && <p className="slide-credit">{slide.credit}</p>}
                   </div>
                 </article>
               ))}
@@ -156,7 +183,7 @@ function Home() {
                 {"<"}
               </button>
               <div className="slider-dots" role="tablist" aria-label="Slide selector">
-                {galleryImages.map((_, index) => (
+                {slides.map((_, index) => (
                   <button
                     key={index}
                     type="button"
@@ -174,6 +201,35 @@ function Home() {
           </div>
         </div>
       </section>
+
+      {news.length > 0 && (
+        <section className="section">
+          <div className="highlight-header">
+            <h2>What's New</h2>
+            <p>Latest updates from the Roadrunner team.</p>
+          </div>
+          <div className="grid">
+            {news.map((item) => (
+              <div className="card" key={item.id}>
+                {item.image_url && (
+                  <div
+                    className="service-media"
+                    style={{ backgroundImage: `url(${item.image_url})`, height: "160px" }}
+                    aria-hidden="true"
+                  />
+                )}
+                <h3>{item.title}</h3>
+                <p>{item.summary}</p>
+                {item.link && (
+                  <Link to={item.link} className="link">
+                    Learn more
+                  </Link>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       <section className="section cta-section">
         <h2>Ready to get started?</h2>

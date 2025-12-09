@@ -7,6 +7,8 @@ from app.models.nav import NavItem
 from app.models.service import Service
 from app.models.faq import FAQ
 from app.models.career import Career
+from app.models.slide import Slide
+from app.models.news import NewsItem
 from app.utils.password import get_password_hash
 
 
@@ -166,6 +168,64 @@ def seed_careers(db: Session):
     db.commit()
 
 
+def seed_slides(db: Session):
+    if db.query(Slide).count() > 0:
+        return
+    slides = [
+        {
+            "title": "Hospice care at home",
+            "subtitle": "Comfort, dignity, and 24/7 support for families.",
+            "image_url": "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=1600&q=80",
+            "cta_label": "Hospice Services",
+            "cta_url": "/services/hospice",
+            "order": 1,
+        },
+        {
+            "title": "Home health that meets you where you are",
+            "subtitle": "Skilled nursing, therapy, and caregiving in the comfort of home.",
+            "image_url": "https://images.unsplash.com/photo-1527613426441-4da17471b66d?auto=format&fit=crop&w=1600&q=80",
+            "cta_label": "Home Health",
+            "cta_url": "/services/home-health",
+            "order": 2,
+        },
+        {
+            "title": "Primary care without leaving home",
+            "subtitle": "Physician-led in-home and telehealth visits through Access Medical.",
+            "image_url": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1600&q=80",
+            "cta_label": "Primary Care",
+            "cta_url": "/services/medical-care",
+            "order": 3,
+        },
+    ]
+    for s in slides:
+        db.add(Slide(**s))
+    db.commit()
+
+
+def seed_news(db: Session):
+    if db.query(NewsItem).count() > 0:
+        return
+    items = [
+        {
+            "title": "Now serving Rio Rancho",
+            "summary": "Expanded hospice and home health coverage to Rio Rancho and surrounding areas.",
+            "link": "/contact",
+            "image_url": "https://images.unsplash.com/photo-1582719478241-99d3d1c0aaee?auto=format&fit=crop&w=1600&q=80",
+            "order": 1,
+        },
+        {
+            "title": "Access Medical accepting new patients",
+            "summary": "Homebound primary care appointments available with our Access Medical team.",
+            "link": "/services/medical-care",
+            "image_url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=80",
+            "order": 2,
+        },
+    ]
+    for item in items:
+        db.add(NewsItem(**item))
+    db.commit()
+
+
 def init():
     Base.metadata.create_all(bind=engine)
     db = SessionLocal()
@@ -175,6 +235,8 @@ def init():
         seed_services(db)
         seed_faq(db)
         seed_careers(db)
+        seed_slides(db)
+        seed_news(db)
     finally:
         db.close()
 

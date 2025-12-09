@@ -1,4 +1,7 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8000/api/v1";
+const defaultBase =
+  import.meta.env.VITE_API_BASE_URL ||
+  (typeof window !== "undefined" ? `${window.location.origin.replace(/:\d+$/, ":8000")}/api/v1` : "http://127.0.0.1:8000/api/v1");
+const API_BASE_URL = defaultBase;
 
 export async function apiFetch(path, { method = "GET", body, token } = {}) {
   const headers = { "Content-Type": "application/json" };
