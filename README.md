@@ -1,114 +1,85 @@
-# Roadrunner Healthcare
+# Roadrunner Healthcare Monorepo
 
-A unified React/Vite website for Roadrunner Hospice, Roadrunner Home Health, and Access Medical (homebound primary care). The site now includes curated, open-source imagery across the homepage, services, and navigation for a more visual experience.
+A combined frontend + backend stack for Roadrunner Hospice, Home Health, and Access Medical. The React/Vite frontend now lives under `frontend/` and a new FastAPI CMS/API lives under `backend/` with JWT auth and SQLite persistence.
 
-## Overview
+## Monorepo layout
 
-- Three service lines in one responsive site (Hospice, Home Health, Primary Care)
-- New gallery data source (`src/content/galleryImages.js`) powering the homepage hero, slider, service cards, and services pages
-- Services dropdown now shows thumbnails for quick visual cues
-- Service detail pages include photo hero banners and supporting image grids
+- `frontend/` — React 18 + Vite app (public site and basic admin login)
+- `backend/` — FastAPI + SQLite API for nav, services, FAQ, careers, and users
 
-## Features
+## Frontend
 
-- React 18 + React Router 6
-- Vite for fast dev/build
-- Accessible, mobile-first CSS with variables
-- Service detail pages (hospice, home health, primary care)
-- Referrals, contact, FAQ, and careers
+Location: `frontend/`
 
-## Tech Stack
+Key pieces:
+- Dynamic nav (services dropdown thumbnails) and service pages backed by API data
+- Gallery data in `frontend/src/content/galleryImages.js`
+- Admin login route (`/admin/login`) placeholder for authenticated workflows
 
-- React 18
-- React Router 6
-- Vite
-- Vanilla CSS
-- ESLint
-
-## Project Structure
-
-```
-src/
-  main.jsx                # Entry point
-  App.jsx                 # App shell and routes
-  index.css               # Global styles
-  content/
-    siteConfig.js         # Site-wide configuration
-    servicesContent.js    # Service copy blocks
-    galleryImages.js      # Open-source image catalog
-  components/
-    layout/
-      Layout.jsx
-      Header.jsx          # Nav with service thumbnails
-      Footer.jsx
-  routes/
-    Home.jsx              # Homepage with hero + slider
-    About.jsx
-    Services/
-      ServicesOverview.jsx
-      Hospice.jsx
-      HomeHealth.jsx
-      MedicalCare.jsx
-    Referrals.jsx
-    Contact.jsx
-    FAQ.jsx
-    Careers.jsx
-```
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 16+ and npm
-- Git
-
-### Install & Run
-
+Common scripts:
 ```bash
+cd frontend
 npm install
-npm run dev
-# open http://localhost:5173 (Vite default)
-```
-
-### Build & Preview
-
-```bash
-npm run build
+npm run dev       # http://localhost:5173
+npm run build     # outputs to frontend/dist
 npm run preview
-```
-
-### Lint
-
-```bash
 npm run lint
 ```
+- Configure API base (optional): set `VITE_API_BASE_URL` to your backend (defaults to `http://localhost:8000/api/v1`).
 
-## Scripts (package.json)
+## Backend
 
-- `npm run dev` — Start Vite dev server with hot reload.
-- `npm run build` — Production build to `dist/`.
-- `npm run preview` — Serve the production build locally.
-- `npm run lint` — Run ESLint (uses project config).
+Location: `backend/`
 
-## Deployment
+Stack: FastAPI, SQLAlchemy, JWT, SQLite.
 
-The repository is configured for GitHub Actions. Standard static hosting settings:
+Setup:
+```bash
+cd backend
+python -m venv .venv
+.venv\Scripts\activate   # Windows
+# source .venv/bin/activate   # macOS/Linux
+pip install -r requirements.txt
+python -m app.db.init_db   # creates tables, seeds admin/content
+uvicorn app.main:app --reload
+```
 
-- Build command: `npm run build`
-- Publish directory: `dist`
+Config:
+- Defaults live in `app/core/config.py` (JWT secret, DB URL, CORS origins).
+- SQLite file path defaults to `./roadrunner.db` relative to backend working dir.
 
-## Content & Customization
+Default admin (seeded by `init_db`):
+- Email: `admin@roadrunnerhealthcare.com`
+- Password: `ChangeMe123!`
 
-- Contact info: `src/content/siteConfig.js`
-- Service copy: `src/content/servicesContent.js`
-- Image catalog: `src/content/galleryImages.js` (used by hero, slider, dropdown thumbnails, and service pages)
-- Styling: `src/index.css` (CSS variables in `:root` for theming)
+API base: `http://localhost:8000/api/v1`
+
+Key endpoints:
+- `POST /auth/login` — obtain JWT
+- `GET /users/me` — current user
+- `GET /nav` — public nav tree
+- `GET /services` / `GET /services/{slug}` — service catalog
+- `GET /faq` — FAQs (optional `?category=`)
+- `GET /careers` / `GET /careers/{id}` — careers
+- Admin CRUD for nav/services/faq/careers via POST/PUT/DELETE (JWT, superuser required)
+
+## Page-by-page summary (frontend)
+
+- **Home** (`frontend/src/routes/Home.jsx`): Hero with gallery background, services grid, highlight with image slider, CTA.
+- **About** (`frontend/src/routes/About.jsx`): Story, mission, values, service area, image grid.
+- **Services Overview** (`frontend/src/routes/Services/ServicesOverview.jsx`): Image-backed hero, service cards with media.
+- **Hospice / Home Health / Medical Care** (`frontend/src/routes/Services/*.jsx`): Image hero + supporting gallery content.
+- **Referrals** (`frontend/src/routes/Referrals.jsx`): Referral info/form.
+- **Contact** (`frontend/src/routes/Contact.jsx`): Contact details, hours, form.
+- **FAQ** (`frontend/src/routes/FAQ.jsx`): Expandable FAQ list.
+- **Careers** (`frontend/src/routes/Careers.jsx`): Active job listings.
+- **Admin** (`frontend/src/routes/Admin/*` if added): Login + placeholder dashboard.
 
 ## Sitemap (key routes)
 
-- `/` — Home
-- `/about` — About
-- `/services` — Services overview
+- `/`
+- `/about`
+- `/services`
   - `/services/hospice`
   - `/services/home-health`
   - `/services/medical-care`
@@ -116,36 +87,16 @@ The repository is configured for GitHub Actions. Standard static hosting setting
 - `/contact`
 - `/faq`
 - `/careers`
+- `/admin/login`, `/admin`
 
-## Page-by-page summary
-
-- **Home** (`src/routes/Home.jsx`): Hero with image overlay, call-to-actions, services grid, highlight section with image slider, and CTA.
-- **About** (`src/routes/About.jsx`): Story, mission, values, service area, services summary, CTA, and an image grid from the gallery.
-- **Services Overview** (`src/routes/Services/ServicesOverview.jsx`): Image-backed hero, three service cards each with photo media, features, and links to details.
-- **Hospice** (`src/routes/Services/Hospice.jsx`): Image hero, intro with supportive photo grid, coverage of care team, eligibility, benefits, and referral steps.
-- **Home Health** (`src/routes/Services/HomeHealth.jsx`): Image hero, overview with photo grid, detailed nursing/therapy/caregiving sections, qualification criteria, conditions, payment, and steps to start.
-- **Medical Care** (`src/routes/Services/MedicalCare.jsx`): Image hero, intro with photo grid, service breakdown, conditions managed, coordination with home health/hospice, payment, and getting started.
-- **Referrals** (`src/routes/Referrals.jsx`): Referral form and info for providers and families.
-- **Contact** (`src/routes/Contact.jsx`): Contact details, hours, service areas, and contact form.
-- **FAQ** (`src/routes/FAQ.jsx`): Frequently asked questions organized in categories.
-- **Careers** (`src/routes/Careers.jsx`): Open positions and hiring information.
-- **NotFound** (`src/routes/NotFound.jsx`): 404 page for unknown routes.
-
-## Redirect Guidance (legacy domains)
-
-Map old domains to the consolidated site with 301s:
+## Redirect guidance (legacy domains)
 
 - `roadrunnerhhc.com/*` → `/services/hospice`
 - `roadrunnerhomehealth.care/*` → `/services/home-health`
 - `accessmedicalnm.care/*` → `/services/medical-care`
 
-Add specific paths as needed (e.g., `/referrals`, `/contact`, `/careers`).
+Add specific paths as needed (`/referrals`, `/contact`, `/careers`).
 
 ## License
 
 Copyright (c) 2025 Roadrunner Healthcare. All rights reserved.
-
-## Support
-
-- Phone: 505-321-4819
-- Email: info@roadrunnerhealthcare.com

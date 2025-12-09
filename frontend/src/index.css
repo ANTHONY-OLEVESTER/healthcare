@@ -675,7 +675,7 @@ button.btn-secondary {
 }
 
 .service-features li:before {
-  content: "✓";
+  content: "*";
   position: absolute;
   left: 0;
   color: var(--color-success);
@@ -1053,7 +1053,7 @@ button.btn-secondary {
 .criteria-list li:before,
 .services-list li:before,
 .benefits-list li:before {
-  content: "→";
+  content: ">";
   position: absolute;
   left: 0;
   color: var(--color-primary);
